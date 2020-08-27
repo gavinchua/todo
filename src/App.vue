@@ -1,19 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div
+      id="nav"
+      class="mb-10 text-center"
+    >
+      <div class="container">
+        <router-link to="/">
+          Home
+        </router-link> |
+        <router-link to="/about">
+          About
+        </router-link>
+      </div>
     </div>
-    <router-view/>
+    <main>
+      <div class="container">
+        <router-view />
+      </div>
+    </main>
   </div>
 </template>
 
 <style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+body
+  @apply antialiased bg-black font-sans font-normal text-base text-white leading-normal relative
+  .container
+    @apply m-auto py-5
 </style>

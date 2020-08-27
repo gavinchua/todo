@@ -1,0 +1,31 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "name": "Buy coffee"
+    },
+    {
+      "id": 1,
+      "name": "Buy sugar"
+    },
+    {
+      "id": 2,
+      "name": "Buy tea"
+    }
+  ],
+  "done": [
+    {
+      "id": 0,
+      "name": "Buy milk"
+    },
+    {
+      "id": 1,
+      "name": "Buy cup"
+    },
+    {
+      "id": 2,
+      "name": "Buy spoon"
+    }
+  ]
+}
+

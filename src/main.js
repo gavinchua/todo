@@ -1,12 +1,27 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-Vue.config.productionTip = false
+import '@/assets/css/tailwind.css';
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+Vue.config.productionTip = false;
+
+function main() {
+  new Vue({
+    el: '#app',
+    router,
+    store,
+    mounted() {
+      document.dispatchEvent(new Event('rendered'));
+    },
+    render: h => h(App)
+  });
+}
+
+/* eslint-disable no-alert, no-console */
+store
+  .dispatch('appData/updateMyList')
+  .catch(error => console.log(error))
+  .then(main);
+/* eslint-enable no-alert, no-console */

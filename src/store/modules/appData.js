@@ -10,16 +10,19 @@ const getters = {
   getMyListDone: state => state.myListDone
 };
 
+/* eslint-disable no-alert, no-console */
 const mutations = {
   setMyListTodo: (state, payload) => {
     state.myListTodo = payload;
   },
   setMyListDone: (state, payload) => {
     state.myListDone = payload;
+  },
+  updateListItem: (state) => {
+    console.log(state);
   }
 };
 
-/* eslint-disable no-alert, no-console */
 const actions = {
   async updateMyList({ commit }) {
     await axios
@@ -30,6 +33,9 @@ const actions = {
         commit('setMyListTodo', items.todo);
         commit('setMyListDone', items.done);
       });
+  },
+  updateListItem({ commit }) {
+    commit('updateListItem');
   }
 };
 /* eslint-enable no-alert, no-console */

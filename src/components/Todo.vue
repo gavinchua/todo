@@ -8,7 +8,7 @@
         class="text-xs list-group md:text-base"
         :list="list1"
         group="people"
-        @change="log"
+        @change="commitMyListTodo"
       >
         <div
           v-for="(element, index) in list1"
@@ -28,7 +28,6 @@
         class="text-xs list-group md:text-base"
         :list="list2"
         group="people"
-        @change="log"
       >
         <div
           v-for="(element, index) in list2"
@@ -58,14 +57,16 @@ export default {
     })
   },
   methods: {
-    log: function(evt) {
-      window.console.log(evt);
+    commitMyListTodo(evt) {
+      if (evt) {
+        this.$store.dispatch('appData/updateListItem');
+      }
     }
   }
 };
 </script>
 
 <style scoped lang="stylus">
-.todo > div
+.todo .list-group
   min-height 10rem
 </style>
